@@ -29,8 +29,6 @@ public class RegularExpressionMatching {
     }
 
     public boolean isMatch(String s, String p) {
-        boolean isMatch = Pattern.matches(p, s);
-
         char[] stringChars = (s + "$").toCharArray();
         char[] patternCharsOrigin = (p + "$").toCharArray();
 
@@ -119,18 +117,6 @@ public class RegularExpressionMatching {
         if (j < patternChars.length && patternChars[j] == '*') {
             j++;
         }
-
-
-        NEXT:for (int k = 0; k < 10; k++) {
-
-            i = 1;
-            i = 2;
-            i = 3;
-
-            continue NEXT;
-
-        }
-
 
         return (i == stringChars.length) && (j == patternChars.length);
     }
