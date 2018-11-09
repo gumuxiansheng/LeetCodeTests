@@ -27,45 +27,53 @@ public class RomantoInteger {
         char[] romanChars = s.toCharArray();
         int intNum = 0;
         for (int i = 0; i < romanChars.length; i++) {
-            if (romanChars[i] == 'I'){
-                if (i < romanChars.length - 1 && romanChars[i + 1] == 'V') {
-                    intNum += 4;
-                    i++;
-                } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'X') {
-                    intNum += 9;
-                    i++;
-                } else {
-                    intNum++;
-                }
+            switch (romanChars[i]) {
+                case 'I':
+                    if (i < romanChars.length - 1 && romanChars[i + 1] == 'V') {
+                        intNum += 4;
+                        i++;
+                    } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'X') {
+                        intNum += 9;
+                        i++;
+                    } else {
+                        intNum++;
+                    }
 
-            } else if (romanChars[i] == 'V') {
-                intNum += 5;
-            } else if (romanChars[i] == 'X') {
-                if (i < romanChars.length - 1 && romanChars[i + 1] == 'L') {
-                    intNum += 40;
-                    i++;
-                } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'C') {
-                    intNum += 90;
-                    i++;
-                } else {
-                    intNum += 10;
-                }
-            } else if (romanChars[i] == 'L') {
-                intNum += 50;
-            } else if (romanChars[i] == 'C') {
-                if (i < romanChars.length - 1 && romanChars[i + 1] == 'D') {
-                    intNum += 400;
-                    i++;
-                } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'M') {
-                    intNum += 900;
-                    i++;
-                } else {
-                    intNum += 100;
-                }
-            } else if (romanChars[i] == 'D') {
-                intNum += 500;
-            } else if (romanChars[i] == 'M') {
-                intNum += 1000;
+                    break;
+                case 'V':
+                    intNum += 5;
+                    break;
+                case 'X':
+                    if (i < romanChars.length - 1 && romanChars[i + 1] == 'L') {
+                        intNum += 40;
+                        i++;
+                    } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'C') {
+                        intNum += 90;
+                        i++;
+                    } else {
+                        intNum += 10;
+                    }
+                    break;
+                case 'L':
+                    intNum += 50;
+                    break;
+                case 'C':
+                    if (i < romanChars.length - 1 && romanChars[i + 1] == 'D') {
+                        intNum += 400;
+                        i++;
+                    } else if (i < romanChars.length - 1 && romanChars[i + 1] == 'M') {
+                        intNum += 900;
+                        i++;
+                    } else {
+                        intNum += 100;
+                    }
+                    break;
+                case 'D':
+                    intNum += 500;
+                    break;
+                case 'M':
+                    intNum += 1000;
+                    break;
             }
         }
 
