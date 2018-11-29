@@ -5,6 +5,9 @@
 "mississippi"
 "mis*is*p*."
 
+"mississippi"
+"mis*is*ip*."
+
 "aab"
 "c*a*b"
 
@@ -32,3 +35,12 @@
 
 "abbbcd"
 "ab*bbbcd"
+
+""
+".*"
+
+"aaaaaaaaaaaaab"
+"a*a*a*a*a*a*a*a*a*a*c"
+
+"aaaaaaaaaaaaab"
+"a*a*a*a*a*a*a*a*a*a*a*a*b"
