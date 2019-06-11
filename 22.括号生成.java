@@ -22,7 +22,7 @@ class Solution {
         List<String> iteratedParenthesis = generateParenthesis(n-1);
         for (String parenthesis : iteratedParenthesis) {
             for (int i = 1; i < parenthesis.length(); i++) {
-                // we needn't "()-" and "-()" because every n-1 > 1 will generate "()-" and "-()".
+                // we needn't "()-" and "-()" because every n-1 > 1 will generate "()-" and "-()" so adding "()" between "()" and "-" can reach the same result.
                 StringBuffer parenthesisBuffer = new StringBuffer(parenthesis);
                 parenthesisBuffer.insert(i, "()");
                 String parenthesisBufferStr = parenthesisBuffer.toString();
