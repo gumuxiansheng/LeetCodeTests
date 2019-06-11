@@ -13,19 +13,27 @@ class Solution {
             parenthesisList.add("()");
             return parenthesisList;
         }
+        if (n == 2) {
+            parenthesisList.add("()()");
+            parenthesisList.add("(())");
+            return parenthesisList;
+        }
         
         List<String> iteratedParenthesis = generateParenthesis(n-1);
         for (String parenthesis : iteratedParenthesis) {
-            for (int i = 0; i < parenthesis.length(); i++) {
+            for (int i = 1; i < parenthesis.length(); i++) {
+                // we needn't "()-" and "-()" because every n-1 > 1 will generate "()-" and "-()".
                 StringBuffer parenthesisBuffer = new StringBuffer(parenthesis);
                 parenthesisBuffer.insert(i, "()");
-                if (!parenthesisList.contains(parenthesisBuffer.toString())) {
-                    parenthesisList.add(parenthesisBuffer.toString());
+                String parenthesisBufferStr = parenthesisBuffer.toString();
+                if (!parenthesisList.contains(parenthesisBufferStr)) {
+                    parenthesisList.add(parenthesisBufferStr);
                 }
             }
 
-            if (!parenthesisList.contains("(" + parenthesis + ")")) {
-                parenthesisList.add("(" + parenthesis + ")");
+            String parenthesisNextStr = "(" + parenthesis + ")";
+            if (!parenthesisList.contains(parenthesisNextStr)) {
+                parenthesisList.add(parenthesisNextStr);
             }
             
         }
