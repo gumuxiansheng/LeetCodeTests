@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+
 class Solution {
     String availableFull = "123456789";
 
